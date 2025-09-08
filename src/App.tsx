@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import augustineImg from './images/августин.jpg';
-import aquinasImg from './images/аквинский.jpg';
+import aquinasImg from './images/aquinas.jpg';
 import aristotleImg from './images/аристотель.jpeg';
 import filmerImg from './images/филмер.jpg';
 import platoImg from './images/платон.webp';
