@@ -49,9 +49,12 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
+    // When deploying to GitHub Pages, set base to the repo name
+    base: '/presentation_anti-corruption_1/',
     build: {
       target: 'esnext',
-      outDir: 'build',
+      // GitHub Pages can serve from the `docs` folder on the default branch
+      outDir: 'docs',
     },
     server: {
       port: 3000,
