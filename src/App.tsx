@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react';
+import augustineImg from './images/августин.jpg';
+import aquinasImg from './images/аквинский.jpg';
+import aristotleImg from './images/аристотель.jpeg';
+import filmerImg from './images/филмер.jpg';
+import platoImg from './images/платон.webp';
 import { PresentationSlide } from './components/presentation-slide';
 import { SlideNavigation } from './components/slide-navigation';
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card';
@@ -94,42 +99,56 @@ export default function App() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Badge variant="outline">354-430 гг.</Badge>
-                Августин Блаженный
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p><strong>Трактат:</strong> "О граде Божьем"</p>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Государство как наказание за грехопадение</li>
-                <li>Власть достается монархам "свыше"</li>
-                <li>Народ не должен противостоять Божественной воле</li>
-                <li>Инструмент подавления греха и поддержания порядка</li>
-              </ul>
-            </CardContent>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <div>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Badge variant="outline">354-430 гг.</Badge>
+                    Августин Блаженный
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p><strong>Трактат:</strong> "О граде Божьем"</p>
+                  <ul className="space-y-2 list-disc list-inside">
+                    <li>Государство как наказание за грехопадение</li>
+                    <li>Власть достается монархам "свыше"</li>
+                    <li>Народ не должен противостоять Божественной воле</li>
+                    <li>Инструмент подавления греха и поддержания порядка</li>
+                  </ul>
+                </CardContent>
+              </div>
+              <div className="w-full h-48 overflow-hidden rounded">
+                <img src={augustineImg} alt="Августин Блаженный" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </Card>
 
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Badge variant="outline">1225-1274 гг.</Badge>
-                Фома Аквинский
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p><strong>Работы:</strong> "О правлении государей"</p>
+            <div className="grid grid-cols-2 gap-4 items-center">
               <div>
-                <p className="font-medium mb-2">Четыре вида закона:</p>
-                <ol className="space-y-1 list-decimal list-inside">
-                  <li><strong>Вечный</strong> - божественный фундамент</li>
-                  <li><strong>Естественный</strong> - общечеловеческий</li>
-                  <li><strong>Человеческий</strong> - позитивный</li>
-                  <li><strong>Божественный</strong> - писанный</li>
-                </ol>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Badge variant="outline">1225-1274 гг.</Badge>
+                    Фома Аквинский
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p><strong>Работы:</strong> "О правлении государей"</p>
+                  <div>
+                    <p className="font-medium mb-2">Четыре вида закона:</p>
+                    <ol className="space-y-1 list-decimal list-inside">
+                      <li><strong>Вечный</strong> - божественный фундамент</li>
+                      <li><strong>Естественный</strong> - общечеловеческий</li>
+                      <li><strong>Человеческий</strong> - позитивный</li>
+                      <li><strong>Божественный</strong> - писанный</li>
+                    </ol>
+                  </div>
+                </CardContent>
               </div>
-            </CardContent>
+              <div className="w-full h-48 overflow-hidden rounded">
+                <img src={aquinasImg} alt="Фома Аквинский" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </Card>
         </div>
 
@@ -157,36 +176,50 @@ export default function App() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Badge variant="outline">IV век до н.э.</Badge>
-                Аристотель
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Семья — основа любого общества</li>
-                <li>Власть главы семьи (патриарха) перерастает в власть монарха</li>
-                <li>Естественная эволюция социальных структур</li>
-              </ul>
-            </CardContent>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <div>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Badge variant="outline">IV век до н.э.</Badge>
+                    Аристотель
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <ul className="space-y-2 list-disc list-inside">
+                    <li>Семья — основа любого общества</li>
+                    <li>Власть главы семьи (патриарха) перерастает в власть монарха</li>
+                    <li>Естественная эволюция социальных структур</li>
+                  </ul>
+                </CardContent>
+              </div>
+              <div className="w-full h-48 overflow-hidden rounded">
+                <img src={aristotleImg} alt="Аристотель" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </Card>
 
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Badge variant="outline">XVII век</Badge>
-                Роберт Филмер
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p><strong>Сочинение:</strong> "Патриархия, или естество королевской власти"</p>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Адам — первый правитель</li>
-                <li>От семьи к власти над коллективом</li>
-                <li>Иерархия семьи как модель государства</li>
-              </ul>
-            </CardContent>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <div>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Badge variant="outline">XVII век</Badge>
+                    Роберт Филмер
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p><strong>Сочинение:</strong> "Патриархия, или естество королевской власти"</p>
+                  <ul className="space-y-2 list-disc list-inside">
+                    <li>Адам — первый правитель</li>
+                    <li>От семьи к власти над коллективом</li>
+                    <li>Иерархия семьи как модель государства</li>
+                  </ul>
+                </CardContent>
+              </div>
+              <div className="w-full h-40 overflow-hidden rounded">
+                <img src={filmerImg} alt="Роберт Филмер" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </Card>
         </div>
 
@@ -241,12 +274,19 @@ export default function App() {
           </Card>
 
           <Card>
-            <CardHeader>
-              <CardTitle>Принцип справедливости</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p>Каждый занимается своим делом, соответствующим природе и способностям</p>
-            </CardContent>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <div>
+                <CardHeader>
+                  <CardTitle>Принцип справедливости</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p>Каждый занимается своим делом, соответствующим природе и способностям</p>
+                </CardContent>
+              </div>
+              <div className="w-full h-40 overflow-hidden rounded">
+                <img src={platoImg} alt="Платон" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </Card>
         </div>
 
