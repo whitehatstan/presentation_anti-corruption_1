@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 interface PresentationSlideProps {
   children: ReactNode;
   className?: string;
+  // allow passing key in JSX without type error
+  key?: string;
 }
 
 export function PresentationSlide({ children, className = "" }: PresentationSlideProps) {

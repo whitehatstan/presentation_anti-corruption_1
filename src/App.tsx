@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PresentationSlide } from './components/presentation-slide';
 import { SlideNavigation } from './components/slide-navigation';
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card';
@@ -33,9 +33,8 @@ export default function App() {
         <Card>
           <CardContent className="p-6">
             <p className="text-lg leading-relaxed">
-              Теологическая, патриархальная и философская (Платон) теории возникновения государства 
-              являются классическими концепциями в науке, объясняющими причины появления формальных 
-              институтов власти и правопорядка на разных исторических этапах.
+              Эти три классические модели предлагают разные ответы на вопрос, почему люди объединились в политические сообщества.
+              Мы сравним их логики, посмотрим на механизмы легитимации власти и подумаем, какие идеи остаются актуальными сегодня.
             </p>
           </CardContent>
         </Card>
@@ -67,6 +66,14 @@ export default function App() {
               <p>Рациональное устройство на основе общественных потребностей</p>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-4">
+          <h4 className="font-medium">Короткая выжимка</h4>
+          <ul className="list-disc list-inside mt-2">
+            <li>Каждая теория даёт инструмент для объяснения происхождения и легитимации власти.</li>
+            <li>Сравнение помогает заметить: религия даёт мораль, семья — стабильность, философия — структуру.</li>
+          </ul>
         </div>
       </div>
     </PresentationSlide>,
@@ -344,10 +351,10 @@ export default function App() {
   };
 
   // Добавляем обработчик клавиш
-  useState(() => {
+  useEffect(() => {
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
-  });
+  }, [currentSlide]);
 
   return (
     <div className="min-h-screen bg-background">
