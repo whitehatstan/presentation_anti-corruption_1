@@ -146,7 +146,7 @@ export default function App() {
                 </CardContent>
               </div>
               <div className="w-full h-48 overflow-hidden rounded">
-                <img src={aquinasImg} alt="Фома Аквинский" className="w-full h-full object-cover" />
+                <img src={aquinasImg} alt="Фома Аквинский" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </Card>
