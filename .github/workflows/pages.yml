@@ -28,13 +28,11 @@ jobs:
       - name: Build
         run: npm run build --if-present
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to gh-pages (peaceiris)
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: docs
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          # optional: keep files from previous deploys
+          # keep_files: true
