@@ -14,35 +14,37 @@ export function SlideNavigation({ currentSlide, totalSlides, onPrevious, onNext 
 
   return (
     <>
-      {/* floating side arrows */}
-      <div className="hidden md:flex fixed left-6 top-1/2 transform -translate-y-1/2 z-40">
-        <button aria-label="previous" onClick={onPrevious} className="floating-arrow bg-white/90 dark:bg-black/60 w-12 h-12 rounded-full flex items-center justify-center shadow-lg disabled:opacity-40 disabled:pointer-events-none">
-          <ChevronLeft className="w-5 h-5 text-muted-foreground" />
+      {/* floating side arrows (always visible, larger for touch) */}
+      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-40">
+        <button aria-label="previous" onClick={onPrevious} className="floating-arrow bg-white dark:bg-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl disabled:opacity-40 disabled:pointer-events-none ring-2 ring-white/80 dark:ring-black/60">
+          <ChevronLeft className="w-6 h-6 text-primary-700 dark:text-primary-300" />
         </button>
       </div>
-      <div className="hidden md:flex fixed right-6 top-1/2 transform -translate-y-1/2 z-40">
-        <button aria-label="next" onClick={onNext} className="floating-arrow bg-white/90 dark:bg-black/60 w-12 h-12 rounded-full flex items-center justify-center shadow-lg disabled:opacity-40 disabled:pointer-events-none">
-          <ChevronRight className="w-5 h-5 text-muted-foreground" />
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40">
+        <button aria-label="next" onClick={onNext} className="floating-arrow bg-white dark:bg-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl disabled:opacity-40 disabled:pointer-events-none ring-2 ring-white/80 dark:ring-black/60">
+          <ChevronRight className="w-6 h-6 text-primary-700 dark:text-primary-300" />
         </button>
       </div>
 
       {/* compact bottom bar for mobile and progress */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-30 w-[min(94%,820px)] bg-background/85 backdrop-blur-sm border border-white/6 rounded-full px-4 py-3 flex items-center gap-4">
-        <button onClick={onPrevious} aria-label="previous" className="px-3 py-2 rounded-full bg-primary/10 text-primary-700 hover:bg-primary/20 disabled:opacity-40 disabled:pointer-events-none">
-          <ChevronLeft className="w-4 h-4" />
-        </button>
-
-        <div className="flex-1">
-          <Progress value={progress} className="h-2 rounded-full" />
-          <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-            <span>Слайд {currentSlide + 1}</span>
-            <span>{totalSlides}</span>
-          </div>
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-30 w-[min(96%,920px)] bg-background/90 backdrop-blur-md border border-white/8 rounded-xl px-4 py-3 flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <button onClick={onPrevious} aria-label="previous" className="px-3 py-2 rounded-md bg-primary text-white hover:bg-primary/90 disabled:opacity-40 disabled:pointer-events-none shadow-md">
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="text-sm font-medium">{currentSlide + 1} / {totalSlides}</div>
         </div>
 
-        <button onClick={onNext} aria-label="next" className="px-3 py-2 rounded-full bg-primary/10 text-primary-700 hover:bg-primary/20 disabled:opacity-40 disabled:pointer-events-none">
-          <ChevronRight className="w-4 h-4" />
-        </button>
+        <div className="flex-1 px-2">
+          <Progress value={progress} className="h-3 rounded-full" />
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="text-sm text-muted-foreground">Пройдено {(progress).toFixed(0)}%</div>
+          <button onClick={onNext} aria-label="next" className="px-3 py-2 rounded-md bg-primary text-white hover:bg-primary/90 disabled:opacity-40 disabled:pointer-events-none shadow-md">
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface PresentationSlideProps {
-  children: ReactNode;
+  children: any;
   className?: string;
   // allow passing key in JSX without type error
   key?: string;
