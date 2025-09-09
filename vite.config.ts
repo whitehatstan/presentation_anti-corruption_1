@@ -17,6 +17,11 @@
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
+        'figma:asset/fccee8b481acc6454ef3426df6aec7523c937319.png': path.resolve(__dirname, './src/assets/fccee8b481acc6454ef3426df6aec7523c937319.png'),
+        'figma:asset/df4346de1084d7ba9cb17a5a70eb3464d9821c74.png': path.resolve(__dirname, './src/assets/df4346de1084d7ba9cb17a5a70eb3464d9821c74.png'),
+        'figma:asset/65f40597ca5447fb2afe888b1cd00d7eab3e8137.png': path.resolve(__dirname, './src/assets/65f40597ca5447fb2afe888b1cd00d7eab3e8137.png'),
+        'figma:asset/58b48069a5ea254d9abd64eaa99d397532f83c2e.png': path.resolve(__dirname, './src/assets/58b48069a5ea254d9abd64eaa99d397532f83c2e.png'),
+        'figma:asset/4ec97fda82b1aab8aca2cc784247d07b1e3ba5fa.png': path.resolve(__dirname, './src/assets/4ec97fda82b1aab8aca2cc784247d07b1e3ba5fa.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',
@@ -49,13 +54,9 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
-    // When deploying to GitHub Pages, set base to the repo name
-    base: '/presentation_anti-corruption_1/',
     build: {
       target: 'esnext',
-      // GitHub Pages can serve from the `docs` folder on the default branch
-  outDir: 'docs',
-  sourcemap: false,
+      outDir: 'build',
     },
     server: {
       port: 3000,
